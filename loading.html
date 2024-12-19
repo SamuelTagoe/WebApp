@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔓</title>
+    <title><span class="emoji">🔓</span></title>
     <style>
         body {
             margin: 0;
@@ -32,13 +32,19 @@
             font-size: 35px;
             margin-top: 10px;
         }
+
+        .emoji {
+            font-family: 'Twemoji', sans-serif;
+        }
     </style>
     <link rel="icon" href="Assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/css/twemoji.min.css">
+
 </head>
 <body>
 
     <div class="loading-text">
-        <h1>🔓</h1>
+        <h1><span class="emoji">🔓</span></h1>
         <span class="typing"></span>
     </div>
 
@@ -56,7 +62,13 @@
         setTimeout(() => {
             window.location.href = 'app.html'; // Redirect to index.html
         }, 1500); // 2-second delay (adjustable)
+
+        // Twemojis ==========================================
+        document.addEventListener('DOMContentLoaded', function () {
+            twemoji.parse(document.body);
+        });
     </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/twemoji.min.js"></script>
 </body>
 </html>

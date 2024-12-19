@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔒</title>
+  <title><span class="emoji">🔒</span></title>
   <style>
     body{
         margin: 0;
@@ -75,19 +75,24 @@
         text-align: center; /* Center the text */
     }
 
+    .emoji {
+        font-family: 'Twemoji', sans-serif;
+    }
+
   </style>
   <link rel="stylesheet" href="styling.css">
   <link rel="icon" href="Assets/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/css/twemoji.min.css">
 </head>
 <body>
   <div class="main">
     <img src="Assets/the-one2.png" alt="" style="height: 160px; width: 150px; border-radius: 50%;">
     <div class="text">
-        <h1 style="color: white; font-size: 30px;">Hello 😊</h1>
+        <h1 style="color: white; font-size: 30px;">Hello <span class="emoji">😊</span></h1>
         <h1><span class="typing" style="color: white; font-size: 25px;"></span></h1>
     </div>
     <a class="btn" onclick="openLoadingPage()">
-        <span style="font-size: 40px;">🔒</span>
+        <span style="font-size: 40px;"><span class="emoji">🔒</span></span>
     </a>
   </div>
   <script>
@@ -117,7 +122,13 @@
             loop: true,
         });
     });
+
+    // Twemojis ==========================================
+    document.addEventListener('DOMContentLoaded', function () {
+        twemoji.parse(document.body);
+    });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/twemoji.min.js"></script>
 </body>
 </html>
