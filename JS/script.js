@@ -65,7 +65,3 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
 });
 
 
-// Twemojis ==========================================
-document.addEventListener('DOMContentLoaded', function () {
-    twemoji.parse(document.body);
-});
