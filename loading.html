@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(59, 59, 59);
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loading-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .typing {
+            color: white;
+            font-size: 35px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading-text">
+        <h1>🔓</h1>
+        <span class="typing"></span>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var typed = new Typed(".typing", {
+                strings: ["", "................."],
+                typeSpeed: 10,
+                backSpeed: 5,
+                loop: false
+            });
+        });
+
+        // Redirect to index.html after a delay
+        setTimeout(() => {
+            window.location.href = 'app.html'; // Redirect to index.html
+        }, 1500); // 2-second delay (adjustable)
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Ripple Effect</title>
+  <style>
+    body{
+        margin: 0;
+        background-color: rgb(59, 59, 59);
+        font-family: sans-serif;
+    }
+
+    .btn{
+        background-color: pink;
+        padding: 20px 40px;
+        border-radius: 5px;
+        box-shadow: 0 0px 20px rgba(148, 93, 93, 0.8);
+        text-decoration: none;
+        color: black;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        margin-top: 20px; /* Add space between text and button */
+    }
+
+    .btn span{
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn::before{
+        content: "";
+        position: absolute;
+        background-color: orangered;
+        width: 0;
+        height: 0;
+        left: var(--xPos);
+        top: var(--yPos);
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: width 0.5s, height 0.5s;
+    }
+
+    .btn:hover::before{
+        width: 300px;
+        height: 300px;
+    }
+
+    @keyframes scaleIn {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.8);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .btn:active {
+        animation: scaleIn 0.5s ease-in;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column; /* Stack the elements vertically */
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .text {
+        text-align: center; /* Center the text */
+    }
+
+  </style>
+  <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+  <div class="main">
+    <img src="the-one2.png" alt="" style="height: 160px; width: 150px; border-radius: 50%;">
+    <div class="text">
+        <h1 style="color: white; font-size: 30px;">Hello 😊</h1>
+        <h1><span class="typing" style="color: white; font-size: 25px;"></span></h1>
+    </div>
+    <a class="btn" onclick="openLoadingPage()">
+        <span style="font-size: 40px;">🔒</span>
+    </a>
+  </div>
+  <script>
+    // Enter Button ====================================
+    const btnEL = document.querySelector(".btn");
+
+    btnEL.addEventListener("mouseover", (event) => {
+        const x = event.pageX - btnEL.offsetLeft;
+        const y = event.pageY - btnEL.offsetTop;
+
+        btnEL.style.setProperty("--xPos", x + "px");
+        btnEL.style.setProperty("--yPos", y + "px");
+    });
+
+    // Function to handle loading page redirection
+    function openLoadingPage() {
+        // Redirect to the loading page
+        window.location.href = 'loading.html';
+    }
+
+    // Typing Animation =================================
+    document.addEventListener("DOMContentLoaded", function () {
+        var typed = new Typed(".typing", {
+            strings: ["", "Click the button"],
+            typeSpeed: 50,
+            backSpeed: 10,
+            loop: true,
+        });
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
