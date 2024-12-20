@@ -34,6 +34,18 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
+    .home .home-info .name
+    {
+        font-size: 30px;
+    }
+    .home .home-info .emoji
+    {
+        font-size: 30px;
+    }
+    .home .home-info h3 
+    {
+        font-size: 25px;
+    }
     .home .home-img
     {
         display: none;
